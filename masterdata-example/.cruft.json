@@ -1,0 +1,24 @@
+{
+  "template": "https://github.com/BAMresearch/masterdata-generator",
+  "commit": "23364a852d264a51ad83002703400a0fbf37e1a4",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "author": "Markus Schilling",
+      "email": "markus.schilling@bam.de",
+      "github_username": "MarkusSchilling",
+      "project_name": "masterdata-example",
+      "module_name": "masterdata_example",
+      "short_description": "A short description for the masterdata project.",
+      "include_python_masterdata": true,
+      "include_excel_masterdata": true,
+      "include_rdfxml_masterdata": true,
+      "_copy_without_render": [
+        "*.html"
+      ],
+      "_template": "https://github.com/BAMresearch/masterdata-generator",
+      "_commit": "23364a852d264a51ad83002703400a0fbf37e1a4"
+    }
+  },
+  "directory": null
+}
