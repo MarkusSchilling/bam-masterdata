@@ -2,24 +2,34 @@ from bam_masterdata.metadata.definitions import ObjectTypeDef, PropertyTypeAssig
 from bam_masterdata.metadata.entities import ObjectType
 
 
-class ExampleObjectType(ObjectType):
+class TensileTestingMachine(TestingMachine):
     defs = ObjectTypeDef(
-        code="EXAMPLE_OBJECT_TYPE",
+        code="TENSILE_TESTING_MACHINE",
         description="""
-        An example to illustrate how to define an Object Type and its attributes//Ein Beispiel zur Veranschaulichung der Definition eines Objekttyps und seiner Attribute
+        A machine designed to perform tensile tests, probably according to a specific standard.//Eine Prüfmaschine, mit der Zugversuche durchgeführt werden können, ggf. im Zusammenhang mit bestimmten Normen.
         """,
-        iri="http://purl.obolibrary.org/bam-masterdata/ExampleObjectType:0.0.0",
-        generated_code_prefix="EXA_OBJ_TYP",
+        iri="https://w3id.org/pmd/co/PMD_0000973",
+        generated_code_prefix="INS.TMACH.TTM",
     )
 
-    name = PropertyTypeAssignment(
-        code="$NAME",
-        data_type="VARCHAR",
-        property_label="Name",
-        description="""Name""",
-        mandatory=True,
+    max_extensometer_length = PropertyTypeAssignment(
+        code="MAX_EXTENSOMETER_LENGTH",
+        data_type="REAL",
+        property_label="Maximum Extensometer Length [mm]",
+        description="""Maximum extensometer length due to physical restriction of the extensometer device attached to the tensile testing machine//Maximale Extensometerlänge, die sich an der physischen Grenze des angeschlossenen Extensometers orientiert""",
+        mandatory=False,
         show_in_edit_views=False,
-        section="General Information",
+        section="Machine Details",
+    )
+
+    max_load = PropertyTypeAssignment(
+        code="MAX_LOAD",
+        data_type="REAL",
+        property_label="Maximum Load [kN]",
+        description="""Maximum usable load due to physical restriction of the load cell attached to the tensile testing machine//Maximale Lastaufbringung, die sich an der physischen Grenze der angeschlossenen Kraftmessdose orientiert""",
+        mandatory=False,
+        show_in_edit_views=False,
+        section="Machine Details",
     )
 
     # see `vocabulary_types.py` for the definition of this CONTROLLEDVOCABULARY
